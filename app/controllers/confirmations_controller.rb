@@ -1,4 +1,4 @@
-class ConfirmationsController < ApplicationController
+class ConfirmationsController < Devise::ConfirmationsController
   respond_to :json
   def almost_there
 

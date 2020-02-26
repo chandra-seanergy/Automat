@@ -1,9 +1,12 @@
-class SessionsController < ApplicationController
+class SessionsController < Devise::SessionsController
 
   before_action :find_user, only: [:login, :verify_otp]
   before_action :validate_password, only: [:login]
   before_action :confirmed_user, only: [:login]
   # POST /resource/sign_in
+  def new
+  end
+  
   def login
     if resource.otp_module_disabled?
       login_after_validation

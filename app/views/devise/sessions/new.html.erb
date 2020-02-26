@@ -1,0 +1,6 @@
+<div id="home-new-view" class="col-sm-10">
+  <home-new-view :_is_valid_credentials="<%= params[:message].to_json%>" :_message_type="<%=params[:message_type].to_json%>">
+  </home-new-view>
+</div>
+
+<%= javascript_pack_tag 'home/home' %>
