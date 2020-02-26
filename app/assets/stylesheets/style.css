@@ -270,9 +270,9 @@ a:hover {
 
       .default-btn {
         width: 100%;
-        background-color: #ff760a;
+        background-color: #28a745;
         outline: none;
-        border: 1px solid #ff760a;
+        border: 1px solid #28a745;
         color: white;
         border-radius: 4px;
         font-size: 14px;
@@ -2096,4 +2096,10 @@ table tbody tr td:last-child {
 .ti-new-tag-input{
   font-size: 16px !important;
   margin-bottom: -2px !important;
+}
+.home-login-header-image-div{
+  /*height: 25%;*/
+  text-align: left;
+  margin-left: -22px !important;
+  margin-bottom: 15px;
 }
