@@ -1,0 +1,15 @@
+<div id="layouts-home_layout">
+  <layouts-home_layout :_current_user="<%= current_user.attributes.merge(profile_pic: current_user.profile_pic).to_json%>" :_frequent_groups="<%=@frequent_groups.to_json%>">
+  </layouts-home_layout>
+</div>
+
+  <div data-behavior="vue" class="page-content-container" id="page-content-container">
+    <%=yield%>
+  </div>
+  
+<div class="main-footer row">
+    <div class="margin-auto">
+     &#169; Lease Analytics. All Rights Reserved.
+   </div>
+</div>
+<%= javascript_pack_tag 'layouts/home_layout'%>

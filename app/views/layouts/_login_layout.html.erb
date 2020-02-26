@@ -1,0 +1,18 @@
+<div class="main-header row" data-behavior="vue">
+  <div cols="12" class="login-header-image-div row">
+    <div class="height100 col-sm-12">
+      <img src="<%=asset_path('LoginLogo.png')%>" class="login-header-image">
+    </div>
+  </div>
+  <div class="main-body page-content-container row" cols="12">
+    <div class="col-sm-1"></div>
+    <slot/>
+    <%=yield%>
+  </div>
+
+  <div class="main-footer row">
+    <div class="margin-auto">
+     &#169; Lease Analytics. All Rights Reserved.
+   </div>
+ </div>
+</div>

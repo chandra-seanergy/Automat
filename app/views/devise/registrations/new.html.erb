@@ -1,0 +1,6 @@
+<div id="register-new-view">
+  <register-new-view :token="<%= form_authenticity_token.to_json %>" :action="<%= user_registration_path.to_json %>" :user="<%= resource%>" :error="<%=resource.errors.full_messages.first%>">
+  </register-new-view>
+</div>
+
+<%= javascript_pack_tag 'register/register'%>

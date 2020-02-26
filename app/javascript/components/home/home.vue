@@ -1,4 +1,4 @@
-<template>  
+<template>
   <div class="row home-main-div">
     <div class="row home-menu-div">
       {{headingText}}
@@ -22,15 +22,21 @@
         <div class="message-div success-message message-login-error" :class="{spnHide:EnableError}">
           {{showErrorMessage}}
         </div>
-        <div class="desc-welcome-div">
-          <h2 class="desc-welcome-heading">Welcome to</h2>
-        </div>
-        <div class=desc-company-div>
-          <h2 class="desc-company-heading">Factz</h2>
-        </div>
+        <div>
+          <img src="/assets/images/LoginLogo.png" class="login-header-image">
+          </div>
         <div class="desc-title-div">
-          <h3 class="desc-title-heading">Research & Collaboration  Tool</h3>
+          <h3 class="desc-title-heading">Collborative analysis</h3>
         </div>
+        <p>
+        Manage large-scale business analysis with fine-grained access controls.
+        </p>
+        <span>
+        Enhance collaboration. Share knowledge and insights. Ensure quality and
+        </span>
+        <span>
+          consistency. Complete work faster!
+        </span>
       </div>
       <div class="home-menu-login-reg col-sm-6">
         <div class="login-reg-main-div">

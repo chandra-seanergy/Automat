@@ -1,0 +1,6 @@
+<div id="welcome_view">
+  <welcome_view :_sign_in_count="<%= current_user.sign_in_count.to_json%>">
+  </welcome_view>
+</div>
+
+<%= javascript_pack_tag 'welcome/welcome'%>
