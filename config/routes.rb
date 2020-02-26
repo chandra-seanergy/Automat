@@ -15,4 +15,27 @@ Rails.application.routes.draw do
     get '/users/login' => 'sessions#new'
     post '/users/login' => 'sessions#login'
   end
- end
+  resources :groups do
+    collection do
+      get :owned_groups
+      get :edit
+      post :delete_group
+    end
+  end
+  resources :group_listing do
+    collection do
+      get :public_groups
+      get :internal_groups
+      get :your_groups
+      get :group_list
+    end
+  end
+  resources :members do
+    collection do
+      get :member_list
+      post :delete_member
+      get :user_list
+      get :group_members
+    end
+  end
+end
