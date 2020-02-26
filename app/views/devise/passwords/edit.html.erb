@@ -1,0 +1,6 @@
+<div id="change_password-view">
+  <change_password-view :password_token="<%=params[:reset_password_token].to_json%>">
+  </change_password-view>
+</div>
+
+<%= javascript_pack_tag 'change_password/change_password'%>

@@ -1,4 +1,4 @@
-class PasswordsController < ApplicationController
+class PasswordsController < Devise::PasswordsController
   respond_to :json
   before_action :require_no_authentication, only: [:create, :update]
   before_action :authenticate_user!, only: [:forgot_password, :change_password]
