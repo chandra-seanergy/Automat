@@ -15,6 +15,33 @@ Rails.application.routes.draw do
     get '/users/login' => 'sessions#new'
     post '/users/login' => 'sessions#login'
   end
+  resources :terms do
+    collection do
+      get :terms
+      get :terms_policy
+    end
+  end
+  resources :settings, only: [:index]
+  resources :profiles do
+    collection do
+      post :update_profile
+      get :my_profile
+    end
+  end
+  resources :accounts do
+     collection do
+       post :validate_username
+       post :delete_account
+       patch :change_username
+     end
+   end
+   resources :two_factor_authentications do
+    collection do
+      get :fetch_qr
+      post :enable_two_factor_authentication
+      post :disable_two_factor_authentication
+    end
+  end
   resources :groups do
     collection do
       get :owned_groups
@@ -38,4 +65,5 @@ Rails.application.routes.draw do
       get :group_members
     end
   end
-end
+ end
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

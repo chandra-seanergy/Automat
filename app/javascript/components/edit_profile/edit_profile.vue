@@ -106,7 +106,7 @@
 			<p class="validation-error" v-if="isCommitEmailValid()">Please enter valid Email</p>
 			<small>
 				This email will be used for web based operations, such as edits and merges.
-				<a
+				<a class="changeUserName" 
 				href="#"
 				>Learn more</a>
 			</small>

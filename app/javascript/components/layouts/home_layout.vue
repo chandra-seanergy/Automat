@@ -5,6 +5,14 @@
         <img @click="HomeSelect()" v-bind:src="require('images/InnerLogo.png')" class="welcome-header-image">
         <div
         class="menu-div group-menu-btn"
+        :class="{groupButtonActive:IsProjectButtonActive,iconActive:IsProjectButtonActive}"
+        @click="fnToggleProjectMenu()"
+        >
+        Projects
+        <v-icon name="angle-down" class="angle-down-img" />
+      </div>
+        <div
+        class="menu-div group-menu-btn"
         :class="{groupButtonActive:IsGroupButtonActive,iconActive:IsGroupButtonActive}"
         @click="fnToggleGrouMenu()"
         >
@@ -54,6 +62,7 @@
       :class="{spnHide: !IsProjectsActive}"
       v-click-outside="outsideitems"
       >
+       <div class="screens-text">New project</div>
       <div @click="NewGroup()" class="screens-text">New group</div>
     </div>
   </div>
@@ -104,6 +113,7 @@
         ShowGroupMenu: "",
         IsGroupButtonActive: false,
         IsProjectsActive: false,
+        IsProjectButtonActive:false,
         IsHelpActive: false,
         IsUserActive: false,
         IsGroupsToggle: false,

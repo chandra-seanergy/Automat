@@ -1,12 +1,14 @@
 <template>
   <div class="row home-main-div">
-    <div class="message-div success-message" v-if="ShowMessageDiv">
-      Welcome! You have been successfully logged in.
+    <div class="message-div error-message" v-if="ShowMessageDiv">
+      You are already signed in.
     </div>
     <div class="welcome-message-div">
-      Welcome to <b>Factz</b>
+      Welcome to Automat!
     </div>
-
+    <p class="welcome-sub-message">
+    Analyze and solve problems together
+    </p>
   </div>
 </template>
 

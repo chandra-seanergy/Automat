@@ -29,7 +29,7 @@
       <b-col sm="7" class="edit-password-form-main-div">
         <div class="edit-password-form-sub-div">
           <div class="edit-password-form-heading">
-            Change your password or recover your current one 
+            Change your password or recover your current one
           </div>
           <div class="edit-password-inputs-div">
             <div class="login-reg-label">
@@ -67,7 +67,7 @@
               <input type="button" class="default-btn" value="Save Password" @click="fnChangePassword()">
             </b-col>
             <b-col sm="6" class="pad0">
-              <span class="anchor-btn-color login-reg-label" @click="fnForgotPassword()">I forgot my password</span>
+              <span class="anchor-btn-forget-color login-reg-label" @click="fnForgotPassword()">I forgot my password</span>
             </b-col>
           </div>
         </div>
@@ -170,7 +170,7 @@
       },
       fnChangePassword(){
         this.ButtonClicked='clicked';
-        if(this.user.password=='' || this.user.new_password=='' || this.confirm_password=='' || this.fnComparePasswords() || !this.fnPasswordLength() || !this.fnNewPasswordLength()){  
+        if(this.user.password=='' || this.user.new_password=='' || this.confirm_password=='' || this.fnComparePasswords() || !this.fnPasswordLength() || !this.fnNewPasswordLength()){
           this.InValidCount=1;
         }
         else{

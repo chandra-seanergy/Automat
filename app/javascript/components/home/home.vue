@@ -1,8 +1,8 @@
 <template>
   <div class="row home-main-div">
-    <!-- <div class="row home-menu-div">
+    <div class="row home-menu-div">
       {{headingText}}
-    </div> -->
+    </div>
     <div class="message-div success-message" v-if="ShowMessageDiv">
       <div class="btn-close-message-div" @click="fnCloseMessageDiv()">X</div>
       <div v-if="fnCheckErrorMessageLength()">
@@ -22,23 +22,17 @@
         <div class="message-div success-message message-login-error" :class="{spnHide:EnableError}">
           {{showErrorMessage}}
         </div>
+        <div class="desc-welcome-div">
+          <h2 class="desc-welcome-heading">Welcome to</h2>
+        </div>
         <div cols="12" class="home-login-header-image-div row">
           <b-col sm="12" class="height100">
            <img v-bind:src="require('images/LoginLogo.png')" class="login-header-image">
          </b-col>       
        </div> 
        <div class="desc-title-div">
-        <h3 class="desc-title-heading">Collborative analysis</h3>
+        <h3 class="desc-title-heading">Research & Collboration Tool</h3>
       </div>
-      <span>
-        Manage large-scale business analysis with fine-grained access controls.
-      </span>
-      <span>
-        Enhance collaboration. Share knowledge and insights. Ensure quality and
-      </span>
-      <span>
-        consistency. Complete work faster!
-      </span>
     </div>
     <div class="home-menu-login-reg col-sm-6">
       <div class="login-reg-main-div">
