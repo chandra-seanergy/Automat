@@ -248,7 +248,7 @@
 				DisableSuccess:true,
 				EditProfileSuccessMessage:"",
 				ButtonClicked:"",
-				file: "", 	
+				file: "",
 			};
 		},
 		props: {
@@ -260,7 +260,7 @@
 				type: String,
 				default: ""
 			},
-			user: {	
+			user: {
 				type: Object,
 				default: ()=>({
 					bio: "",
@@ -288,8 +288,8 @@
 			axios.get("profiles/my_profile")
 			.then(response => {
 				try{
-					if (response.data.user.avatar.url != null && response.data.user.avatar.url != undefined) {
-						this.Img = response.data.user.avatar.url;
+					if (response.data.avatar != null && response.data.avatar != undefined) {
+						this.Img = response.data.avatar;
 						this.ShowImg = true;
 					}
 					else if(response.data.user.profile_pic != null || response.data.user.profile_pic != ""){
