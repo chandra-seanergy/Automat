@@ -27,7 +27,11 @@ class User < ApplicationRecord
   end
 
   def profile_pic
-    self.avatar.service_url || self.gravatar_url
+    if self.avatar.attached?
+      self.avatar.service_url
+    else
+      self.gravatar_url
+    end
   end
 
 

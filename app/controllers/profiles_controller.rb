@@ -13,7 +13,12 @@ class ProfilesController < ApplicationController
 
   # Display current user profile
   def my_profile
-    render json: { user: current_user.as_json(except: :avatar), avatar: current_user.avatar.service_url}
+    if current_user.avatar.attached?
+      avatar = current_user.avatar.service_url
+    else
+      avatar = nil
+    end
+    render json: { user: current_user.as_json(except: :avatar), avatar: avatar}
   end
 
   # Display the users profile
