@@ -124,6 +124,8 @@ a:hover {
       .login-header-image-div {
         height: 100%;
         text-align: center;
+        margin-top: 50px;
+        margin-bottom: 30px;
       }
 
       .login-header-image {
@@ -215,7 +217,7 @@ a:hover {
       .btnloginactive {
         background-color: white;
         font-weight: bold;
-        border-bottom: 2px solid #e8ad06;
+        border-bottom: 2px solid #dc3545;
       }
 
       .login-reg-body-div {
@@ -270,9 +272,9 @@ a:hover {
 
       .default-btn {
         width: 100%;
-        background-color: #28a745;
+        background-color: #dc3545;
         outline: none;
-        border: 1px solid #28a745;
+        border: 1px solid #dc3545;
         color: white;
         border-radius: 4px;
         font-size: 14px;
@@ -450,8 +452,9 @@ a:hover {
       .welcome-message-div {
         color: black;
         font-size: 30px;
-        padding: 25px;
-        padding-left: 100px;
+        padding-top: 100px;
+        width: 100%;
+        text-align: center;
       }
 
       .message-div {
@@ -2098,8 +2101,15 @@ table tbody tr td:last-child {
   margin-bottom: -2px !important;
 }
 .home-login-header-image-div{
-  /*height: 25%;*/
   text-align: left;
   margin-left: -22px !important;
   margin-bottom: 15px;
+}
+.welcome-sub-message{
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+}
+.logo-main-top{
+  height: 85%;
 }
