@@ -288,7 +288,7 @@ a:hover {
       }
 
       .anchor-btn-color {
-        color: #0056b3;
+        color: #dc3545;
         cursor: pointer;
       }
 
@@ -348,7 +348,7 @@ a:hover {
       }
 
       .deleteAccountHeader {
-        color: red;
+        color: #dc3545;
       }
       .blockDisplay {
         display: block;
@@ -393,7 +393,7 @@ a:hover {
 
       .header-right-menu-main-div {
         text-align: right;
-        vertical-align: middle !important; 
+        vertical-align: middle !important;
       }
 
       .header-right-menu-div {
@@ -458,7 +458,7 @@ a:hover {
       }
 
       .message-div {
-        background-color: #f6751f;
+        background-color: #dc3545;
         color: white;
         width: 100%;
         padding: 7px;
@@ -473,6 +473,12 @@ a:hover {
       .success-message {
         background-color: green;
         color: white;
+      }
+
+      .btn-warning {
+          color: #fff !important;
+          background-color: #dc3545 !important;
+          border-color: #dc3545 !important;
       }
 
       .group-menu {
@@ -521,7 +527,7 @@ a:hover {
       .group-menu-items-header{
         padding: 0;
       }
-      
+
       .user-upload-icon {
         height: 160px;
         width: 160px;
@@ -843,8 +849,8 @@ a:hover {
 
   .bv-create-group-button {
     width: 137px;
-    background-color: #ff760a !important;
-    border:1px solid #ff760a !important;
+    background-color: #dc3545 !important;
+    border:1px solid #dc3545 !important;
   }
   .bv-cancel-group-button {
     width: 100px !important;
@@ -1029,7 +1035,7 @@ a:hover {
 
   .GroupListActive {
     font-weight: 600;
-    border-bottom: 2px solid #6666c4;
+    border-bottom: 2px solid #dc3545;
   }
 
   .group-list-group-item-div {
@@ -1096,6 +1102,11 @@ a:hover {
   .mar-zero {
     margin: 0 !important;
     margin-bottom: 10px !important;
+  }
+
+  .anchor-btn-forget-color{
+    color: #070caf;
+    cursor: pointer;
   }
 
   .remove-group-p1 {
@@ -1564,7 +1575,7 @@ a:hover {
    position: absolute !important;
    top: 0 !important;
    right: -7px !important;
-   padding: 9px 20px !important; 
+   padding: 9px 20px !important;
    background: #28a745 !important;
    color: #ffff !important;
    border-color: #28a745 !important;
@@ -1574,7 +1585,7 @@ a:hover {
   position: absolute !important;
   top: 0 !important;
   right: -7px !important;
-  padding: 11px 20px !important; 
+  padding: 11px 20px !important;
   background: #28a745 !important;
   color: #ffff !important;
   border-color: #28a745 !important;
@@ -1666,7 +1677,7 @@ a:hover {
   cursor: text;
   width: 100%;
   height: 42px;
-  position: relative !important; 
+  position: relative !important;
 }
 .bootstrap-tagsinput input {
   border: none;
@@ -1800,27 +1811,27 @@ table tr td:nth-child(2) {
   font-size: 13px;
   top: 5px;
 }
-.dx-datagrid-rowsview .dx-select-checkboxes-hidden .dx-select-checkbox {  
-  display: block!important;  
+.dx-datagrid-rowsview .dx-select-checkboxes-hidden .dx-select-checkbox {
+  display: block!important;
 }
 .doc-name{
-  text-decoration: none; 
+  text-decoration: none;
   color: black;
-  font-size: 15px; 
+  font-size: 15px;
   font-weight: bold
 }
 .doc-preview{
   font-size: 10px;
   white-space: initial;
-  width: 85%; 
-  float: right; 
+  width: 85%;
+  float: right;
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: justify;
   padding-left: 10px;
 }
 .div-preview{
- width:15%; 
+ width:15%;
  float: left;
 }
 .doc_image{
@@ -1860,7 +1871,7 @@ table tr td:nth-child(2) {
 }
 .dx-datagrid .dx-header-filter:not(.dx-header-filter-empty), .dx-datagrid-container .dx-header-filter:not(.dx-header-filter-empty) {
   color: red;
-} 
+}
 table tbody tr td:last-child {
   padding-right: 30px !important;
   text-align: right !important;
@@ -1881,33 +1892,33 @@ table tbody tr td:last-child {
   }
   @media (min-width: 576px){
     .jumbotron {
-      padding: 10px !important; 
+      padding: 10px !important;
     }
   }
   .doc-viewer-show{
-    height: 80vh; 
+    height: 80vh;
     width:100% !important;
     border:1px solid  rgb(232, 230, 230);
   }
   .doc-total-viewer-show{
-    height: 80vh; 
+    height: 80vh;
     width:100% !important;
     border:1px solid  rgb(232, 230, 230);
   }
   .doc-viewer-hide{
-    height: 80vh; 
+    height: 80vh;
     float: left;
     width:60% !important;
     border:1px solid  rgb(232, 230, 230);
   }
   .right-panel-doc-viewer-show{
-    height: 80vh; 
+    height: 80vh;
     width:80% !important;
     float:left;
     border:1px solid  rgb(232, 230, 230);
   }
   .right-panel-doc-viewer-hide{
-    height: 80vh; 
+    height: 80vh;
     width:80% !important;
     float:right;
     border:1px solid  rgb(232, 230, 230);
@@ -1975,7 +1986,7 @@ table tbody tr td:last-child {
   position: relative;
 }
 .active {
- background-color: #b6dbf5 !important; 
+ background-color: #b6dbf5 !important;
 }
 .right-panel-icon-collapse-right{
   position:absolute;
@@ -2019,21 +2030,21 @@ table tbody tr td:last-child {
   width: 5%;
 }
 /*.span-doc-title:hover{
-  overflow: visible; 
+  overflow: visible;
   white-space: normal;
-  height:auto; 
-  }*/ 
+  height:auto;
+  }*/
   .vue-input-tag-wrapper{
    -webkit-appearance: none !important;
  }
  .doc-list{
-   width:100%; 
+   width:100%;
    display:table;
    margin-top: 30px;
  }
  .doc-num-wise{
-  margin:0 auto; 
-  display:table; 
+  margin:0 auto;
+  display:table;
   text-align:center;
 }
 .doc-left-arrow{
@@ -2057,7 +2068,7 @@ table tbody tr td:last-child {
  cursor: pointer;
 }
 .dx-datagrid-rowsview table tbody tr td{
-  border-bottom: none !important; 
+  border-bottom: none !important;
 }
 .dx-datagrid-content .dx-datagrid-table .dx-row {
   border-bottom: 1px solid #ddd !important;
@@ -2078,7 +2089,7 @@ table tbody tr td:last-child {
   float: left;
 }
 .doc-list-count{
-  float:left; 
+  float:left;
   margin:0 10px;
 }
 .dx-search-textbox{

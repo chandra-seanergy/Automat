@@ -55,9 +55,9 @@
         v-model="user.username"
         v-on:change="IsUserAutheticate"
         @keyup="fnCheckUsername()"
-        ></b-form-input> 
-        <p class="validation-error" v-if="ButtonClicked"  :class="{ spnHide:user.username }">Please enter Username</p>       
-        <p :class="[uservalidation ? 'validation-error' : 'validation-success']" v-if="isUsernameExist">{{IsUserExistField}}</p> 
+        ></b-form-input>
+        <p class="validation-error" v-if="ButtonClicked"  :class="{ spnHide:user.username }">Please enter Username</p>
+        <p :class="[uservalidation ? 'validation-error' : 'validation-success']" v-if="isUsernameExist">{{IsUserExistField}}</p>
         <b-button
         variant="warning"
         class="btn-update-username"
@@ -74,7 +74,7 @@
       <b-col cols="2" align="left"></b-col>
       <b-col cols="4" align="left">
         <div  v-if="MyGroups.length>0">
-          <p>Your account is currently owner in these groups : 
+          <p>Your account is currently owner in these groups :
             <span class="item" v-for="(item,index) in MyGroups" :key="index">{{item}} </span>
           </p>
           <p>You must transfer ownership or delete these group before you can delete your account</p>
@@ -98,7 +98,7 @@
       >You are about to permanently delete <b>your account</b>, and all of the issues, merge requests, and groups linked to your account. Once you confirm <b>Delete Account</b>, it cannot be undone or recovered.</p>
 
       <p class="my-4 remove-group-p3 mar-zero">
-        Type your  
+        Type your
         <span class="group-delete-random-txt">password</span> to confirm:
       </p>
 
@@ -115,7 +115,7 @@
       </div>
 
       <div class="delete-group-modal-footer">
-        <b-button @click="fnCloseModal()" variant="light">Cancel</b-button> 
+        <b-button @click="fnCloseModal()" variant="light">Cancel</b-button>
         <b-button @click="fnDeleteAccount()" :disabled="ConfirmDisable" variant="danger">Delete account</b-button>
       </div>
     </b-modal>
@@ -162,7 +162,7 @@
         default:''
       }
     },
-    mounted(){ 
+    mounted(){
       axios.get('groups/owned_groups')
       .then((response) => {
         this.MyGroups=response.data.owned_groups;
@@ -276,7 +276,7 @@
           event.preventDefault();
         }
       },
-      fnDeleteAccount() {      
+      fnDeleteAccount() {
         var data={
           "user": {
             "password": this.Password
@@ -341,4 +341,3 @@
     },
   }
 </script>
-
