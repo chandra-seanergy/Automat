@@ -14,7 +14,5 @@ class AddColumnToUser < ActiveRecord::Migration[6.0]
     add_column :users, :private_contributions, :boolean, default: false
     add_index :users, :unique_user_id,         unique: true
     add_column :users, :avatar, :string, default: ""
-    add_column :users, :otp_secret_key, :string, default: ""
-    add_column :users, :otp_module, :integer, default: 0
   end
 end
