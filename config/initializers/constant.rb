@@ -1,0 +1,1 @@
+APP_DOMAIN = Rails.application.secrets.app_domain
