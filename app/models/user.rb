@@ -1,11 +1,14 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  include Gravtastic
+  has_gravatar :default=>"identicon"
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
   has_one_time_password
   enum otp_module: { disabled: 0, enabled: 1 }, _prefix: true
   attr_accessor :otp_code_token, :profile_pic
+  has_one_attached :avatar
 
   # validations
 
@@ -22,6 +25,11 @@ class User < ApplicationRecord
   def login
     @login || self.username || self.email
   end
+
+  def profile_pic
+    self.avatar.service_url || self.gravatar_url
+  end
+
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
@@ -44,11 +52,11 @@ class User < ApplicationRecord
     search_params[:sort_by]||=""
     search_params[:sort_by]=search_params[:sort_by].empty? ? "created_at desc" : search_params[:sort_by]
     Group.where("groups.id IN (
-      SELECT groups.id FROM groups JOIN group_members on(group_members.group_id=groups.id) 
-      where group_members.user_id=:user_id and 
-      (group_members.expiration_date>now()::date or group_members.expiration_date is null) 
-      and groups.name ILIKE :search) 
-      OR groups.id IN (SELECT groups.id from groups where owner_id=:user_id and name ILIKE :search) 
+      SELECT groups.id FROM groups JOIN group_members on(group_members.group_id=groups.id)
+      where group_members.user_id=:user_id and
+      (group_members.expiration_date>now()::date or group_members.expiration_date is null)
+      and groups.name ILIKE :search)
+      OR groups.id IN (SELECT groups.id from groups where owner_id=:user_id and name ILIKE :search)
       OR groups.id IN (SELECT groups.id from groups where visibility = 1 and name ILIKE :search)",
        search: "%#{search_params[:name].strip}%", user_id: self.id).order(search_params[:sort_by])
   end

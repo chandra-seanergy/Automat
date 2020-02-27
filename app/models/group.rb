@@ -3,6 +3,7 @@ class Group < ApplicationRecord
 
   # callbacks
   after_create :map_owner_to_memberlist
+  has_one_attached :avatar
 
   #validations
   validates_presence_of :name, :visibility, on: :create
@@ -44,8 +45,8 @@ class Group < ApplicationRecord
     search_params[:sort_by]||=""
     search_params[:sort_by]=search_params[:sort_by].empty? ? "name ascending" : search_params[:sort_by]
     users=self.users.includes(:group_members)
-    .where("(users.name ILIKE :search OR users.username ILIKE :search OR users.email ILIKE :search) 
-      and (group_members.expiration_date>=now()::date or group_members.expiration_date is null)", 
+    .where("(users.name ILIKE :search OR users.username ILIKE :search OR users.email ILIKE :search)
+      and (group_members.expiration_date>=now()::date or group_members.expiration_date is null)",
       search: "%#{search_params[:credential].strip}%")
     .order(member_sort_criteria(search_params[:sort_by]))
     members=GroupMember.where(group: self, user: users)

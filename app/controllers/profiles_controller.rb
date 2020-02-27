@@ -2,10 +2,10 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!
   # udpate_profile
   def update_profile
-    user_avatar = params[:user][:avatar]
-    current_user.avatar = user_avatar if !user_avatar.nil? and File.exist?(user_avatar)
+    # user_avatar = params[:user][:avatar]
+    # current_user.avatar = user_avatar if !user_avatar.nil? and File.exist?(user_avatar)
     if current_user.update(profile_params)
-      render json: {status: 200, message: "Profile Updated Successfully.", avatar: current_user.avatar.url}
+      render json: {status: 200, message: "Profile Updated Successfully.", avatar: current_user.avatar.service_url}
     else
       render json: {status: 500, message: current_user.errors.full_messages}
     end
@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
 
   # Display current user profile
   def my_profile
-    render json: { user: current_user}
+    render json: { user: current_user.as_json(except: :avatar), avatar: current_user.avatar.service_url}
   end
 
   # Display the users profile
@@ -31,6 +31,6 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:user).permit(:name, :email, :public_email, :commit_email, :skype,
       :linkedin, :twitter, :website_url, :location, :organization, :bio, :private_profile,
-      :private_contributions)
+      :private_contributions, :avatar)
     end
   end
