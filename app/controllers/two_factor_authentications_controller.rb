@@ -1,4 +1,4 @@
-class TwoFactorAutheticationsController < ApplicationController
+class TwoFactorAuthenticationsController < ApplicationController
   before_action :authenticate_user!
 
   # Generate and provide QR Code to enable two factor authentication for user
@@ -8,10 +8,7 @@ class TwoFactorAutheticationsController < ApplicationController
     user_id = current_user.id
     image_path = Rails.root.join("public/#{user_id}.png")
     File.open(image_path, 'wb'){|image_file| image_file.write png }
-    image = Cloudinary::Uploader.upload(image_path)
-    File.delete("./public/#{user_id}.png")
-    qrcode = image.as_json(only: ["public_id", "url"])
-    render json: {status: 200, message: "QR fetched", qr: qrcode}
+    render json: {status: 200, message: "QR fetched", qr: "#{user_id}.png", key: current_user.otp_secret_key.scan(/.{4}/).join(' ')}
   end
 
   # Recieve OTP code and enable two factor authentication

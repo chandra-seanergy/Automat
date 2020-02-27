@@ -8,8 +8,10 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'e51eb1d30366cb8ebeeabd96fa9a208c86bdd07631b04d0b229347e56e230ff788b10ae83dedd1c8865e769e65c9525c785b76e0566dc04463ffd0e556360f3d'
-
+  # config.secret_key = '312d415140f12b1b1d6a33a5fba5b13c434236225afb1796e57d0d732b4e64fd8084f1d900deaeb3d53b673a85cfc8e11c11f6fb5ce32aa7c0330919a417fbf2'
+  config.warden do |manager|
+    manager.failure_app = CustomFailure
+  end
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -41,7 +43,7 @@ Devise.setup do |config|
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
   # config.authentication_keys = [:email]
-
+  config.authentication_keys = [:login]
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
   # find_for_authentication method and considered in your model lookup. For instance,
@@ -74,7 +76,8 @@ Devise.setup do |config|
 
   # If 401 status code should be returned for AJAX requests. True by default.
   # config.http_authenticatable_on_xhr = true
-
+  config.http_authenticatable_on_xhr = false
+  config.navigational_formats = ["*/*", :html, :json]
   # The realm used in Http Basic Authentication. 'Application' by default.
   # config.http_authentication_realm = 'Application'
 
@@ -114,13 +117,13 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'f8a388122b04ef3ed97b2703a1ab578704457bcd38766b5d6ccc0f092c00c99a415bbd918565c2de35e2d1d1cc512f16f10f0fcde7ac3333be42201765d28d69'
+  # config.pepper = '477334da1856d115d30b4c831c7a76ef806fc3f315257552d836c96425220214a2af971e91dffbb031b82b0df4565d03e6babc14b0e2469ff797fac941d9b161'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
 
   # Send a notification email when the user's password is changed.
-  # config.send_password_change_notification = false
+  config.send_password_change_notification = true
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -216,7 +219,7 @@ Devise.setup do |config|
 
   # When set to false, does not sign a user in automatically after their password is
   # reset. Defaults to true, so a user is signed in automatically after a reset.
-  # config.sign_in_after_reset_password = true
+  config.sign_in_after_reset_password = false
 
   # ==> Configuration for :encryptable
   # Allow you to use another hashing or encryption algorithm besides bcrypt (default).
@@ -297,3 +300,4 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
 end
+  
