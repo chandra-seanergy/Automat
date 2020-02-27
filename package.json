@@ -6,10 +6,27 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
-    "turbolinks": "^5.2.0"
+    "axios": "^0.19.2",
+    "bootstrap-vue": "^2.5.0",
+    "devextreme": "19.2",
+    "devextreme-vue": "19.2",
+    "install": "^0.13.0",
+    "jquery": "^3.4.1",
+    "turbolinks": "^5.2.0",
+    "vue-awesome": "^4.0.2",
+    "vue-cookies": "^1.7.0",
+    "vue-input-tag": "^2.0.6",
+    "vue-loading-overlay": "^3.3.0",
+    "vue-moment": "^4.1.0",
+    "vue2-timeago": "^1.2.6",
+    "vuejs-datepicker": "^1.6.2",
+    "whatwg-fetch": "^3.0.0",
+    "yarn": "^1.22.0"
   },
   "version": "0.1.0",
   "devDependencies": {
+    "vue-loader": "^15.9.0",
+    "vue-template-compiler": "^2.6.11",
     "webpack-dev-server": "^3.10.3"
   }
 }
